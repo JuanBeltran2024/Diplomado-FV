@@ -15,6 +15,10 @@ import ModulesList from './pages/ModulesList';
 import ModuleDetail from './pages/ModuleDetail';
 import ClassDetail from './pages/ClassDetail';
 import Teachers from './pages/Teachers';
+import TeacherResources from './pages/TeacherResources';
+import ClassesManagement from './pages/ClassesManagement';
+import UserManagement from './pages/UserManagement';
+import AdminSettings from './pages/AdminSettings';
 
 // --- Importación de Estilos Globales ---
 import './App.css';
@@ -42,6 +46,10 @@ function App() {
             <Route path="/modules/:id" element={<ModuleDetail />} />
             <Route path="/class/:id" element={<ClassDetail />} />
             <Route path="/teachers" element={<Teachers />} />
+            <Route path="/resources" element={<TeacherResources />} />
+            <Route path="/classes" element={<ClassesManagement />} />
+            <Route path="/users" element={<UserManagement />} />
+            <Route path="/settings" element={<AdminSettings />} />
           </Route>
         </Routes>
       </Router>
