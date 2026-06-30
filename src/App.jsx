@@ -19,28 +19,33 @@ import Teachers from './pages/Teachers';
 // --- Importación de Estilos Globales ---
 import './App.css';
 
+// --- Contextos ---
+import { RoleProvider } from './context/RoleContext';
+
 function App() {
   return (
     // Router principal que envuelve toda la aplicación para manejar el historial de navegación
-    <Router>
-      <Routes>
-        {/* --- RUTAS PÚBLICAS --- */}
-        {/* Páginas accesibles sin necesidad de iniciar sesión */}
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        
-        {/* --- RUTAS PRIVADAS (PLATAFORMA) --- */}
-        {/* Envueltas en el componente <Layout />, el cual contiene el menú lateral y la barra superior.
-            Todas estas rutas se renderizarán dentro del espacio de contenido del Layout. */}
-        <Route element={<Layout />}>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/modules" element={<ModulesList />} />
-          <Route path="/modules/:id" element={<ModuleDetail />} />
-          <Route path="/class/:id" element={<ClassDetail />} />
-          <Route path="/teachers" element={<Teachers />} />
-        </Route>
-      </Routes>
-    </Router>
+    <RoleProvider>
+      <Router>
+        <Routes>
+          {/* --- RUTAS PÚBLICAS --- */}
+          {/* Páginas accesibles sin necesidad de iniciar sesión */}
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          
+          {/* --- RUTAS PRIVADAS (PLATAFORMA) --- */}
+          {/* Envueltas en el componente <Layout />, el cual contiene el menú lateral y la barra superior.
+              Todas estas rutas se renderizarán dentro del espacio de contenido del Layout. */}
+          <Route element={<Layout />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/modules" element={<ModulesList />} />
+            <Route path="/modules/:id" element={<ModuleDetail />} />
+            <Route path="/class/:id" element={<ClassDetail />} />
+            <Route path="/teachers" element={<Teachers />} />
+          </Route>
+        </Routes>
+      </Router>
+    </RoleProvider>
   );
 }
 
