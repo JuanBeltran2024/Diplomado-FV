@@ -5,7 +5,7 @@
  */
 import { NavLink } from 'react-router-dom';
 import { useRole } from '../context/RoleContext';
-import { Home, BookOpen, Users, LogOut, Settings, Video, Upload, FileText } from 'lucide-react';
+import { Home, BookOpen, Users, LogOut, Settings, Video, Upload, FileText, LayoutDashboard } from 'lucide-react';
 
 export default function Sidebar() {
   const { role } = useRole();
@@ -63,25 +63,9 @@ export default function Sidebar() {
         {/* --- ENLACES ADMINISTRADOR --- */}
         {role === 'admin' && (
           <>
-            <NavLink to="/users" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'}>
-              <Users size={20} />
-              <span>Usuarios</span>
-            </NavLink>
-            <NavLink to="/modules" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'}>
-              <BookOpen size={20} />
-              <span>Módulos</span>
-            </NavLink>
-            <NavLink to="/classes" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'}>
-              <Video size={20} />
-              <span>Clases</span>
-            </NavLink>
-            <NavLink to="/teachers" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'}>
-              <FileText size={20} />
-              <span>Asignar Profesores</span>
-            </NavLink>
-            <NavLink to="/settings" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'}>
-              <Settings size={20} />
-              <span>Configuración</span>
+            <NavLink to="/admin" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'}>
+              <LayoutDashboard size={20} />
+              <span>Panel Admin</span>
             </NavLink>
           </>
         )}

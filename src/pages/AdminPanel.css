@@ -1,0 +1,324 @@
+/* ================================================
+   ADMIN PANEL - Estilos globales
+   ================================================ */
+
+/* Tabs de navegación */
+.admin-tabs {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.admin-tab-btn {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: var(--transition);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.admin-tab-btn:hover {
+  color: var(--primary-color);
+  background-color: var(--bg-color);
+}
+
+.admin-tab-btn.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  background-color: var(--bg-color);
+}
+
+/* Stat cards del resumen */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.stat-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Tabla de administración */
+.admin-table-wrapper {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.admin-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.admin-table-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th {
+  padding: 0.875rem 1.25rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  background-color: #f8fafc;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.admin-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.875rem;
+  color: var(--text-dark);
+  vertical-align: middle;
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-table tr:hover td {
+  background-color: #f8fafc;
+}
+
+/* Badges de rol y estado */
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.role-admin    { background: #fef2f2; color: #dc2626; }
+.role-teacher  { background: #eff6ff; color: #1d4ed8; }
+.role-student  { background: #f0fdf4; color: #16a34a; }
+
+.status-active   { background: #dcfce7; color: #16a34a; }
+.status-inactive { background: #fee2e2; color: #dc2626; }
+.status-upcoming { background: #fef9c3; color: #ca8a04; }
+.status-completed{ background: #dcfce7; color: #16a34a; }
+
+.type-pdf          { background: #fef2f2; color: #dc2626; }
+.type-presentation { background: #eff6ff; color: #1d4ed8; }
+.type-link         { background: #f0fdf4; color: #16a34a; }
+.type-file         { background: #fef9c3; color: #ca8a04; }
+
+/* Botones de acción */
+.action-btns {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.btn-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  background: var(--white);
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.btn-icon:hover { background: var(--bg-color); }
+.btn-icon.edit  { color: #1d4ed8; }
+.btn-icon.edit:hover { background: #eff6ff; border-color: #93c5fd; }
+.btn-icon.del   { color: #dc2626; }
+.btn-icon.del:hover  { background: #fef2f2; border-color: #fca5a5; }
+
+/* Avatar con nombre */
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.user-avatar-sm {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.user-avatar-initials {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.user-name { font-weight: 600; font-size: 0.875rem; }
+.user-email { font-size: 0.75rem; color: var(--text-muted); }
+
+/* Teacher card (resumen) */
+.teacher-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+.teacher-admin-card {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.teacher-admin-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.teacher-card-top {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.teacher-card-img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.teacher-card-stats {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.teacher-card-stat {
+  text-align: center;
+  flex: 1;
+}
+
+.teacher-card-stat span:first-child {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.teacher-card-stat span:last-child {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.teacher-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Empty section heading styles */
+.section-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Order badge */
+.order-badge {
+  width: 28px;
+  height: 28px;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
