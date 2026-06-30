@@ -1,0 +1,291 @@
+/* ================================================
+   TEACHER PANEL - Estilos específicos
+   ================================================ */
+
+/* ---- Reutilizamos las clases de AdminPanel.css ---- */
+/* Puedes importar AdminPanel.css desde TeacherPanel también,
+   pero aquí duplicamos lo necesario para independencia. */
+
+.teacher-tabs {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.teacher-tab-btn {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: var(--transition);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.teacher-tab-btn:hover { color: #0ea5e9; background: #f0f9ff; }
+.teacher-tab-btn.active { color: #0ea5e9; border-bottom-color: #0ea5e9; background: #f0f9ff; }
+
+/* Hero banner del perfil de profesor */
+.teacher-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #3b82f6 100%);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  color: white;
+  box-shadow: var(--shadow-lg);
+}
+
+.teacher-hero-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255,255,255,0.4);
+  flex-shrink: 0;
+}
+
+.teacher-hero-info h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.teacher-hero-info p {
+  opacity: 0.8;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.teacher-hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+.teacher-hero-stat span:first-child {
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: block;
+}
+
+.teacher-hero-stat span:last-child {
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+
+/* Cards de módulo */
+.module-card-teacher {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.module-card-teacher:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: #93c5fd;
+}
+
+.module-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.module-num {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.module-card-footer {
+  display: flex;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.module-stat-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  background: var(--bg-color);
+  padding: 0.3rem 0.65rem;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+/* Tarjeta de clase */
+.class-card {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.class-card:hover { box-shadow: var(--shadow-md); }
+
+.class-status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.class-status-dot.completed { background: #16a34a; }
+.class-status-dot.upcoming  { background: #ca8a04; box-shadow: 0 0 6px #fbbf24; }
+
+.class-card-body { flex: 1; min-width: 0; }
+.class-title { font-weight: 600; font-size: 0.9rem; margin-bottom: 2px; }
+.class-meta  { font-size: 0.78rem; color: var(--text-muted); }
+
+.class-video-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-radius: var(--radius-md);
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: var(--transition);
+  border: 1px solid #bfdbfe;
+}
+
+.class-video-btn:hover { background: #dbeafe; }
+
+.class-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  background: #f0fdf4;
+  color: #16a34a;
+  border-radius: var(--radius-md);
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: var(--transition);
+  border: 1px solid #bbf7d0;
+  cursor: pointer;
+}
+
+.class-add-btn:hover { background: #dcfce7; }
+
+/* Recurso tipo fila */
+.resource-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
+}
+
+.resource-row:hover { box-shadow: var(--shadow-sm); border-color: #93c5fd; }
+
+.resource-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.resource-row-body { flex: 1; min-width: 0; }
+.resource-row-title { font-weight: 600; font-size: 0.88rem; }
+.resource-row-meta  { font-size: 0.76rem; color: var(--text-muted); margin-top: 2px; }
+
+/* Tarjeta de anuncio */
+.announcement-card {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid #3b82f6;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.announcement-card:hover { box-shadow: var(--shadow-md); }
+.announcement-card.urgent { border-left-color: #ef4444; }
+.announcement-card.info   { border-left-color: #10b981; }
+
+.announcement-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.announcement-title { font-weight: 700; font-size: 0.95rem; }
+.announcement-date  { font-size: 0.75rem; color: var(--text-muted); }
+.announcement-body  { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+
+.announcement-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.tag-general { background: #eff6ff; color: #1d4ed8; }
+.tag-urgent  { background: #fef2f2; color: #dc2626; }
+.tag-info    { background: #f0fdf4; color: #16a34a; }
+
+/* Upload placeholder */
+.upload-zone {
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  background: #fafafa;
+}
+
+.upload-zone:hover {
+  border-color: #3b82f6;
+  background: #f0f9ff;
+}

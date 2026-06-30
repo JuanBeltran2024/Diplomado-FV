@@ -20,6 +20,7 @@ import ClassesManagement from './pages/ClassesManagement';
 import UserManagement from './pages/UserManagement';
 import AdminSettings from './pages/AdminSettings';
 import AdminPanel from './pages/AdminPanel';
+import TeacherPanel from './pages/TeacherPanel';
 
 // --- Importación de Estilos Globales ---
 import './App.css';
@@ -52,6 +53,7 @@ function App() {
             <Route path="/users" element={<UserManagement />} />
             <Route path="/settings" element={<AdminSettings />} />
             <Route path="/admin" element={<AdminPanel />} />
+            <Route path="/teacher" element={<TeacherPanel />} />
           </Route>
         </Routes>
       </Router>

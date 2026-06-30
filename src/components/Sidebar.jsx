@@ -5,7 +5,7 @@
  */
 import { NavLink } from 'react-router-dom';
 import { useRole } from '../context/RoleContext';
-import { Home, BookOpen, Users, LogOut, Settings, Video, Upload, FileText, LayoutDashboard } from 'lucide-react';
+import { Home, BookOpen, Users, LogOut, Settings, Video, Upload, FileText, LayoutDashboard, GraduationCap } from 'lucide-react';
 
 export default function Sidebar() {
   const { role } = useRole();
@@ -45,17 +45,9 @@ export default function Sidebar() {
         {/* --- ENLACES PROFESOR --- */}
         {role === 'teacher' && (
           <>
-            <NavLink to="/modules" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'}>
-              <BookOpen size={20} />
-              <span>Mis Módulos</span>
-            </NavLink>
-            <NavLink to="/resources" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'}>
-              <Upload size={20} />
-              <span>Subir Recursos</span>
-            </NavLink>
-            <NavLink to="/classes" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'}>
-              <Video size={20} />
-              <span>Mis Clases</span>
+            <NavLink to="/teacher" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'}>
+              <GraduationCap size={20} />
+              <span>Mi Panel</span>
             </NavLink>
           </>
         )}
